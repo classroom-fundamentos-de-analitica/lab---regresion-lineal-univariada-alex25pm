@@ -8,7 +8,6 @@ En este laboratio se construirá un modelo de regresión lineal univariado.
 import numpy as np
 import pandas as pd
 
-
 def pregunta_01():
     """
     En este punto se realiza la lectura de conjuntos de datos.
@@ -18,20 +17,19 @@ def pregunta_01():
     df = pd.read_csv("gm_2008_region.csv")
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
-    y = df["life"].to_numpy()
-    X = df["fertility"].to_numpy()
+    y = df["life"]
+    X = df["fertility"]
 
     # Imprima las dimensiones de `y`
     print(y.shape)
 
     # Imprima las dimensiones de `X`
-    print(x.shape)
-
+    print(X.shape)
     # Transforme `y` a un array de numpy usando reshape
-    y_reshaped = y.reshape(y.shape[0], 1)
+    y_reshaped = y.values.reshape(-1,1)
 
     # Trasforme `X` a un array de numpy usando reshape
-    X_reshaped = X.reshape(X.shape[0], 1)
+    X_reshaped = X.values.reshape(-1,1)
 
     # Imprima las nuevas dimensiones de `y`
     print(y_reshaped.shape)
